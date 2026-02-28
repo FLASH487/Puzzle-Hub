@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">Puzzle Hub</string>
-    <string name="play_games">Play Games</string>
-    <string name="score_history">Score History</string>
-    <string name="how_to_play">How To Play</string>
-    <string name="about">About</string>
+    <string name="play_games">Let\'s Play! 🎮</string>
+    <string name="score_history">Score History 📊</string>
+    <string name="how_to_play">How To Play 📖</string>
+    <string name="about">About 💜</string>
     <string name="memory_match">Memory Match Cards</string>
     <string name="sliding_puzzle">Sliding Number Puzzle</string>
     <string name="easy_4x4">Easy (4×4)</string>
@@ -12,18 +12,23 @@
     <string name="slide_4x4">4×4</string>
     <string name="timer_label">Time: 00:00</string>
     <string name="moves_label">Moves: 0</string>
-    <string name="restart">Restart</string>
-    <string name="save_score">Save Score</string>
-    <string name="share">Share</string>
-    <string name="play_again">Play Again</string>
-    <string name="home">Home</string>
-    <string name="game_result">Game Result</string>
+    <string name="restart">Restart 🔄</string>
+    <string name="save_score">Save Score 💾</string>
+    <string name="share">Share With Friends 💌</string>
+    <string name="play_again">Play Again 🔁</string>
+    <string name="home">Home 🏠</string>
+    <string name="game_result">You Did It! 🎉</string>
     <string name="clear_all">Clear All</string>
     <string name="all_games">All</string>
     <string name="memory">Memory</string>
     <string name="slide">Slide</string>
-    <string name="select_difficulty">Select Difficulty</string>
-    <string name="open_project_page">Open Project Page</string>
-    <string name="no_scores_yet">No scores yet. Play a game!</string>
-    <string name="saved">Saved!</string>
+    <string name="select_difficulty">Choose Your Level ✨</string>
+    <string name="open_project_page">Visit Project Page 🌐</string>
+    <string name="no_scores_yet">No scores yet. Play a game! 🎲</string>
+    <string name="saved">Score saved! ✅</string>
+    <string name="choose_your_puzzle">Choose Your Puzzle 🧩</string>
+    <string name="welcome_message">Welcome to Puzzle Hub! 💖</string>
+    <string name="find_matching_pairs">Find matching pairs! 🃏</string>
+    <string name="slide_tiles_into_order">Slide tiles into order! 🔢</string>
+    <string name="congratulations">You Did It! 🎉</string>
 </resources>

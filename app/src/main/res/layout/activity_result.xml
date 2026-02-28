@@ -1,111 +1,125 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
-    android:padding="24dp">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="🎉 Congratulations!"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        android:textColor="@color/purple_700" />
-
-    <com.google.android.material.card.MaterialCardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        app:cardCornerRadius="16dp"
-        app:cardElevation="4dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="24dp">
-
-            <TextView
-                android:id="@+id/tvGameType"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Game: Memory Match"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/tvDifficulty"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Difficulty: Easy"
-                android:textSize="16sp"
-                android:layout_marginTop="8dp" />
-
-            <TextView
-                android:id="@+id/tvTime"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Time: 00:00"
-                android:textSize="16sp"
-                android:layout_marginTop="8dp" />
-
-            <TextView
-                android:id="@+id/tvMovesResult"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Moves: 0"
-                android:textSize="16sp"
-                android:layout_marginTop="8dp" />
-
-        </LinearLayout>
-    </com.google.android.material.card.MaterialCardView>
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnSaveScore"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:text="@string/save_score"
-        app:cornerRadius="12dp"
-        android:layout_marginTop="24dp" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnShare"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:text="@string/share"
-        style="@style/Widget.Material3.Button.TonalButton"
-        app:cornerRadius="12dp"
-        android:layout_marginTop="8dp" />
+    android:background="@color/blush_background">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="8dp">
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="24dp">
+
+        <TextView
+            style="@style/AppTitleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/congratulations" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@color/surface_white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <TextView
+                    android:id="@+id/tvGameType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Game: Memory Match"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/accent_purple" />
+
+                <TextView
+                    android:id="@+id/tvDifficulty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Difficulty: Easy"
+                    android:textSize="16sp"
+                    android:textColor="@color/pink_dark"
+                    android:layout_marginTop="8dp" />
+
+                <TextView
+                    android:id="@+id/tvTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Time: 00:00"
+                    android:textSize="16sp"
+                    android:textColor="@color/pink_dark"
+                    android:layout_marginTop="8dp" />
+
+                <TextView
+                    android:id="@+id/tvMovesResult"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Moves: 0"
+                    android:textSize="16sp"
+                    android:textColor="@color/pink_dark"
+                    android:layout_marginTop="8dp" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnPlayAgain"
-            android:layout_width="0dp"
+            android:id="@+id/btnSaveScore"
+            style="@style/AppPrimaryButton"
+            android:layout_width="match_parent"
             android:layout_height="56dp"
-            android:layout_weight="1"
-            android:text="@string/play_again"
-            style="@style/Widget.Material3.Button.OutlinedButton"
-            app:cornerRadius="12dp"
-            android:layout_marginEnd="4dp" />
+            android:text="@string/save_score"
+            app:icon="@android:drawable/ic_menu_save"
+            app:iconGravity="textStart"
+            app:cornerRadius="16dp"
+            android:layout_marginTop="24dp" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnHome"
-            android:layout_width="0dp"
+            android:id="@+id/btnShare"
+            android:layout_width="match_parent"
             android:layout_height="56dp"
-            android:layout_weight="1"
-            android:text="@string/home"
-            style="@style/Widget.Material3.Button.OutlinedButton"
-            app:cornerRadius="12dp"
-            android:layout_marginStart="4dp" />
+            android:text="@string/share"
+            style="@style/Widget.Material3.Button.TonalButton"
+            app:icon="@android:drawable/ic_menu_share"
+            app:iconGravity="textStart"
+            app:cornerRadius="16dp"
+            android:layout_marginTop="8dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnPlayAgain"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_weight="1"
+                android:text="@string/play_again"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                app:cornerRadius="16dp"
+                android:layout_marginEnd="4dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnHome"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_weight="1"
+                android:text="@string/home"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                app:cornerRadius="16dp"
+                android:layout_marginStart="4dp" />
+
+        </LinearLayout>
 
     </LinearLayout>
-
-</LinearLayout>
+</ScrollView>
