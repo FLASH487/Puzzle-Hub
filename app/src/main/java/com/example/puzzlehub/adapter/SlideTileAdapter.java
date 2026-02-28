@@ -12,10 +12,22 @@ import com.example.puzzlehub.R;
 
 import java.util.List;
 
+/**
+ * SlideTileAdapter - RecyclerView Adapter for the Sliding Number Puzzle.
+ *
+ * HOW THIS ADAPTER WORKS:
+ * - Each tile is an item in the RecyclerView grid
+ * - The tile with value 0 is the "empty" space (displayed as blank)
+ * - All other tiles show their number and are clickable
+ * - When the data changes (after a move), updateTiles() refreshes the display
+ *
+ * Uses GridLayoutManager (set in the Fragment) to display tiles in a grid.
+ */
 public class SlideTileAdapter extends RecyclerView.Adapter<SlideTileAdapter.TileViewHolder> {
-    private List<Integer> tiles;
+    private List<Integer> tiles;  // List of tile values (0 = empty)
     private OnTileClickListener listener;
 
+    /** Interface for handling tile click events */
     public interface OnTileClickListener {
         void onTileClick(int position);
     }
@@ -28,6 +40,7 @@ public class SlideTileAdapter extends RecyclerView.Adapter<SlideTileAdapter.Tile
         this.listener = listener;
     }
 
+    /** Updates the tile data and refreshes the display */
     public void updateTiles(List<Integer> tiles) {
         this.tiles = tiles;
         notifyDataSetChanged();
@@ -45,13 +58,16 @@ public class SlideTileAdapter extends RecyclerView.Adapter<SlideTileAdapter.Tile
     public void onBindViewHolder(@NonNull TileViewHolder holder, int position) {
         int value = tiles.get(position);
         if (value == 0) {
+            // Empty tile: show blank with transparent background
             holder.tvTile.setText("");
             holder.tvTile.setBackgroundColor(0x00000000);
         } else {
+            // Numbered tile: show the number with colored background
             holder.tvTile.setText(String.valueOf(value));
             holder.tvTile.setBackgroundResource(R.drawable.rounded_button);
         }
 
+        // Only numbered tiles (not empty) are clickable
         holder.itemView.setOnClickListener(v -> {
             if (listener != null && value != 0) {
                 listener.onTileClick(holder.getAdapterPosition());
@@ -64,6 +80,7 @@ public class SlideTileAdapter extends RecyclerView.Adapter<SlideTileAdapter.Tile
         return tiles.size();
     }
 
+    /** ViewHolder holds the TextView for each tile */
     static class TileViewHolder extends RecyclerView.ViewHolder {
         TextView tvTile;
 

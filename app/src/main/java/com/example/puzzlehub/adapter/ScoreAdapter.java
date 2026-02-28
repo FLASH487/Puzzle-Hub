@@ -17,9 +17,19 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
+/**
+ * ScoreAdapter - RecyclerView Adapter for displaying score history.
+ *
+ * HOW THIS ADAPTER WORKS:
+ * - Displays a list of ScoreEntity objects from the Room database
+ * - Each item shows: game name, difficulty, time, moves, and date
+ * - setScores() is called when new data arrives from the database
+ * - notifyDataSetChanged() tells RecyclerView to refresh the display
+ */
 public class ScoreAdapter extends RecyclerView.Adapter<ScoreAdapter.ScoreViewHolder> {
     private List<ScoreEntity> scores = new ArrayList<>();
 
+    /** Updates the list of scores and refreshes the display */
     public void setScores(List<ScoreEntity> scores) {
         this.scores = scores;
         notifyDataSetChanged();
@@ -36,15 +46,19 @@ public class ScoreAdapter extends RecyclerView.Adapter<ScoreAdapter.ScoreViewHol
     @Override
     public void onBindViewHolder(@NonNull ScoreViewHolder holder, int position) {
         ScoreEntity score = scores.get(position);
+
+        // Convert game type code to friendly name
         String gameName = "MEMORY".equals(score.gameType) ? "Memory Match" : "Sliding Puzzle";
         holder.tvScoreGame.setText(gameName);
         holder.tvScoreDifficulty.setText(score.difficulty);
 
+        // Format time as MM:SS
         int min = score.timeSeconds / 60;
         int sec = score.timeSeconds % 60;
         holder.tvScoreTime.setText(String.format(Locale.US, "%02d:%02d", min, sec));
         holder.tvScoreMoves.setText(score.moves + " moves");
 
+        // Format the date from milliseconds to readable string
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.US);
         holder.tvScoreDate.setText(sdf.format(new Date(score.dateMillis)));
     }
@@ -54,6 +68,7 @@ public class ScoreAdapter extends RecyclerView.Adapter<ScoreAdapter.ScoreViewHol
         return scores.size();
     }
 
+    /** ViewHolder holds references to all TextViews in item_score.xml */
     static class ScoreViewHolder extends RecyclerView.ViewHolder {
         TextView tvScoreGame, tvScoreDifficulty, tvScoreTime, tvScoreMoves, tvScoreDate;
 
