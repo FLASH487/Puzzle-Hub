@@ -1,15 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
+    <!-- Pastel Color Palette for feminine / cute design -->
+    <color name="pink_primary">#FFF48FB1</color>       <!-- Soft pink - primary -->
+    <color name="lavender_secondary">#FFCE93D8</color>  <!-- Lavender - secondary -->
+    <color name="blush_background">#FFFFF0F5</color>    <!-- Light blush - background -->
+    <color name="surface_white">#FFFFFFFF</color>       <!-- White - surface -->
+    <color name="accent_purple">#FF7B1FA2</color>       <!-- Darker purple - accent text -->
+    <color name="pink_dark">#FFD81B60</color>           <!-- Darker pink for contrast -->
+
+    <!-- Legacy color names kept for compatibility -->
+    <color name="purple_500">#FFF48FB1</color>
+    <color name="purple_700">#FFCE93D8</color>
+    <color name="teal_200">#FFCE93D8</color>
+    <color name="teal_700">#FF7B1FA2</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="card_back">#FF5C6BC0</color>
-    <color name="card_matched">#FF66BB6A</color>
-    <color name="tile_color">#FF1565C0</color>
+
+    <!-- Game-specific colors -->
+    <color name="card_back">#FFCE93D8</color>           <!-- Lavender card back -->
+    <color name="card_matched">#FFA5D6A7</color>        <!-- Soft green for matched -->
+    <color name="tile_color">#FFF48FB1</color>           <!-- Soft pink tile -->
     <color name="tile_empty">#00000000</color>
-    <color name="splash_bg">#FF1A237E</color>
-    <color name="game_hub_bg">#FFF5F5F5</color>
+    <color name="splash_bg">#FFF8BBD0</color>            <!-- Soft pink splash -->
+    <color name="game_hub_bg">#FFFFF0F5</color>          <!-- Light blush background -->
+    <color name="toolbar_bg">#FFF48FB1</color>           <!-- Soft pink toolbar -->
+    <color name="score_card_bg">#FFFCE4EC</color>        <!-- Very light pink -->
 </resources>
