@@ -1,7 +1,5 @@
 package com.example.puzzlehub.fragment;
 
-import android.os.Bundle;
-
 public class MemoryEasyFragment extends BaseMemoryFragment {
     public static MemoryEasyFragment newInstance() {
         return new MemoryEasyFragment();
