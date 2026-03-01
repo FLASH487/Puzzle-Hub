@@ -70,7 +70,7 @@ public class SlideTileAdapter extends RecyclerView.Adapter<SlideTileAdapter.Tile
         // Only numbered tiles (not empty) are clickable
         holder.itemView.setOnClickListener(v -> {
             if (listener != null && value != 0) {
-                listener.onTileClick(holder.getAdapterPosition());
+                listener.onTileClick(position);
             }
         });
     }

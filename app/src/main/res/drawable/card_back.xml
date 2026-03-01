@@ -4,9 +4,11 @@
     android:height="48dp"
     android:viewportWidth="48"
     android:viewportHeight="48">
+    <!-- Lavender background matching pastel palette -->
     <path
-        android:fillColor="#5C6BC0"
+        android:fillColor="#FFCE93D8"
         android:pathData="M4,4h40v40h-40z" />
+    <!-- White star/puzzle icon -->
     <path
         android:fillColor="#FFFFFF"
         android:pathData="M24,14 L28,22 L36,23 L30,29 L31.5,37 L24,33 L16.5,37 L18,29 L12,23 L20,22Z" />
