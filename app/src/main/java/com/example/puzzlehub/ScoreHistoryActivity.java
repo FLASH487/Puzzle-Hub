@@ -12,9 +12,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.puzzlehub.adapter.ScoreAdapter;
 import com.example.puzzlehub.db.AppDatabase;
 import com.example.puzzlehub.db.ScoreDao;
+import com.example.puzzlehub.db.ScoreEntity;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.chip.Chip;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.Executors;
 
 /**
@@ -28,6 +31,8 @@ import java.util.concurrent.Executors;
  * Scores are loaded from the Room database using LiveData.
  * LiveData automatically updates the UI when the database data changes.
  * The observe() method watches for changes and updates the RecyclerView.
+ * We observe getAllScores() ONCE and keep a local copy of all scores.
+ * When the user filters by chip, we filter the local list - no extra observers needed.
  *
  * FILTER CHIPS:
  * Material Design Chips allow filtering scores by game type (All, Memory, Slide).
@@ -37,6 +42,9 @@ public class ScoreHistoryActivity extends AppCompatActivity {
     private ScoreDao scoreDao;
     private TextView tvEmpty;
     private RecyclerView rvScores;
+    // Store all scores locally so we can filter without adding multiple LiveData observers
+    private List<ScoreEntity> allScores = new ArrayList<>();
+    private String currentFilter = null;  // null = show all, "MEMORY" or "SLIDE" = filtered
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,9 +69,10 @@ public class ScoreHistoryActivity extends AppCompatActivity {
         Chip chipMemory = findViewById(R.id.chipMemory);
         Chip chipSlide = findViewById(R.id.chipSlide);
 
-        chipAll.setOnClickListener(v -> loadAllScores());
-        chipMemory.setOnClickListener(v -> loadScoresByType("MEMORY"));
-        chipSlide.setOnClickListener(v -> loadScoresByType("SLIDE"));
+        // Chips set the currentFilter and refresh the displayed list from local data
+        chipAll.setOnClickListener(v -> { currentFilter = null; applyFilter(); });
+        chipMemory.setOnClickListener(v -> { currentFilter = "MEMORY"; applyFilter(); });
+        chipSlide.setOnClickListener(v -> { currentFilter = "SLIDE"; applyFilter(); });
 
         // Clear all scores with confirmation dialog
         MaterialButton btnClearAll = findViewById(R.id.btnClearAll);
@@ -79,28 +88,31 @@ public class ScoreHistoryActivity extends AppCompatActivity {
                     .show();
         });
 
-        // Load all scores when the screen opens
-        loadAllScores();
+        // Observe ALL scores ONCE - when data changes, update local copy and re-apply filter
+        scoreDao.getAllScores().observe(this, scores -> {
+            allScores = scores;
+            applyFilter();
+        });
     }
 
     /**
-     * Loads all scores from the database using LiveData.
-     * LiveData.observe() automatically updates when data changes.
+     * Applies the current filter to the locally stored score list and updates the RecyclerView.
+     * This avoids adding multiple LiveData observers when chips are clicked.
      */
-    private void loadAllScores() {
-        scoreDao.getAllScores().observe(this, scores -> {
-            adapter.setScores(scores);
-            tvEmpty.setVisibility(scores.isEmpty() ? View.VISIBLE : View.GONE);
-            rvScores.setVisibility(scores.isEmpty() ? View.GONE : View.VISIBLE);
-        });
-    }
-
-    /** Loads scores filtered by game type */
-    private void loadScoresByType(String type) {
-        scoreDao.getScoresByType(type).observe(this, scores -> {
-            adapter.setScores(scores);
-            tvEmpty.setVisibility(scores.isEmpty() ? View.VISIBLE : View.GONE);
-            rvScores.setVisibility(scores.isEmpty() ? View.GONE : View.VISIBLE);
-        });
+    private void applyFilter() {
+        List<ScoreEntity> filtered;
+        if (currentFilter == null) {
+            filtered = allScores;
+        } else {
+            filtered = new ArrayList<>();
+            for (ScoreEntity score : allScores) {
+                if (currentFilter.equals(score.gameType)) {
+                    filtered.add(score);
+                }
+            }
+        }
+        adapter.setScores(filtered);
+        tvEmpty.setVisibility(filtered.isEmpty() ? View.VISIBLE : View.GONE);
+        rvScores.setVisibility(filtered.isEmpty() ? View.GONE : View.VISIBLE);
     }
 }

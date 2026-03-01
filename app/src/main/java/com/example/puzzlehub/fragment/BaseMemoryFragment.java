@@ -202,6 +202,8 @@ public abstract class BaseMemoryFragment extends Fragment {
     /** Resets the game board for a new game */
     public void resetGame() {
         if (adapter != null) {
+            // Cancel any pending flip-back callbacks to avoid crashes after reset
+            handler.removeCallbacksAndMessages(null);
             firstCard = -1;
             secondCard = -1;
             isComparing = false;
