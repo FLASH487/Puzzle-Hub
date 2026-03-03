@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Main app theme using Material3 DayNight with pastel palette -->
+    <!-- Main app theme using Material3 DayNight with feminine pastel palette -->
     <style name="Theme.PuzzleHub" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="colorPrimary">@color/pink_primary</item>
         <item name="colorPrimaryVariant">@color/pink_dark</item>
@@ -10,7 +10,7 @@
         <item name="colorSurface">@color/surface_white</item>
     </style>
 
-    <!-- Splash screen theme with soft pink background -->
+    <!-- Splash screen theme with soft blush background -->
     <style name="Theme.PuzzleHub.Splash" parent="Theme.PuzzleHub">
         <item name="android:windowBackground">@color/splash_bg</item>
     </style>

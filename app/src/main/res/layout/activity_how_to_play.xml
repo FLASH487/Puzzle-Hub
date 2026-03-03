@@ -10,12 +10,14 @@
         android:orientation="vertical"
         android:padding="24dp">
 
+        <!-- Page title with flower emoji -->
         <TextView
             style="@style/AppTitleText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/how_to_play" />
+            android:text="🌸 How To Play" />
 
+        <!-- Memory Match section -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -28,16 +30,17 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="10dp"
             android:text="1. Tap on a card to flip it over.\n2. Tap on a second card to find a match.\n3. If the two cards match, they stay face up.\n4. If they don\'t match, they flip back after 1 second.\n5. Find all matching pairs to win!\n6. Try to finish with the fewest moves and fastest time.\n\nDifficulties:\n• Easy: 4×4 grid (8 pairs)\n• Hard: 6×6 grid (18 pairs)"
             android:textSize="16sp"
             android:textColor="@color/pink_dark"
-            android:lineSpacingMultiplier="1.3" />
+            android:lineSpacingMultiplier="1.4" />
 
+        <!-- Sliding Puzzle section -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="28dp"
             android:text="🔢 Sliding Number Puzzle"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -46,11 +49,11 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="10dp"
             android:text="1. The board has numbered tiles and one empty space.\n2. Tap a tile adjacent to the empty space to slide it.\n3. Arrange all numbers in order (1, 2, 3... from top-left).\n4. The empty space should end up in the bottom-right corner.\n5. Try to solve it with the fewest moves!\n\nDifficulties:\n• 3×3: 8 numbered tiles\n• 4×4: 15 numbered tiles"
             android:textSize="16sp"
             android:textColor="@color/pink_dark"
-            android:lineSpacingMultiplier="1.3" />
+            android:lineSpacingMultiplier="1.4" />
 
     </LinearLayout>
 

@@ -1,28 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Pastel Color Palette for feminine / cute design -->
-    <color name="pink_primary">#FFF48FB1</color>       <!-- Soft pink - primary -->
-    <color name="lavender_secondary">#FFCE93D8</color>  <!-- Lavender - secondary -->
-    <color name="blush_background">#FFFFF0F5</color>    <!-- Light blush - background -->
-    <color name="surface_white">#FFFFFFFF</color>       <!-- White - surface -->
-    <color name="accent_purple">#FF7B1FA2</color>       <!-- Darker purple - accent text -->
-    <color name="pink_dark">#FFD81B60</color>           <!-- Darker pink for contrast -->
+    <!-- ===== Pastel Feminine Color Palette ===== -->
 
-    <!-- Legacy color names kept for compatibility -->
-    <color name="purple_500">#FFF48FB1</color>
-    <color name="purple_700">#FFCE93D8</color>
-    <color name="teal_200">#FFCE93D8</color>
-    <color name="teal_700">#FF7B1FA2</color>
+    <!-- Primary pink - soft rose pink for buttons and toolbar -->
+    <color name="pink_primary">#FFF06292</color>
+
+    <!-- Secondary lavender - card backs and accents -->
+    <color name="lavender_secondary">#FFBA68C8</color>
+
+    <!-- Deep rose - used for titles and bold text -->
+    <color name="accent_purple">#FF880E4F</color>
+
+    <!-- Pink dark - for subtle contrast elements -->
+    <color name="pink_dark">#FFE91E8C</color>
+
+    <!-- Background colors -->
+    <color name="blush_background">#FFFFF0F5</color>   <!-- Soft blush background -->
+    <color name="surface_white">#FFFFFFFF</color>       <!-- Pure white surface -->
+
+    <!-- Extra accent colors -->
+    <color name="rose_gold">#FFE8A1A1</color>           <!-- Warm rose gold accent -->
+    <color name="soft_peach">#FFFCE4EC</color>          <!-- Soft peach for cards -->
+    <color name="soft_lilac">#FFF3E5F5</color>          <!-- Soft lilac background -->
+
+    <!-- Legacy names kept so old code still works -->
+    <color name="purple_500">#FFF06292</color>
+    <color name="purple_700">#FFBA68C8</color>
+    <color name="teal_200">#FFBA68C8</color>
+    <color name="teal_700">#FF880E4F</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
     <!-- Game-specific colors -->
-    <color name="card_back">#FFCE93D8</color>           <!-- Lavender card back -->
-    <color name="card_matched">#FFA5D6A7</color>        <!-- Soft green for matched -->
-    <color name="tile_color">#FFF48FB1</color>           <!-- Soft pink tile -->
-    <color name="tile_empty">#00000000</color>
-    <color name="splash_bg">#FFF8BBD0</color>            <!-- Soft pink splash -->
-    <color name="game_hub_bg">#FFFFF0F5</color>          <!-- Light blush background -->
-    <color name="toolbar_bg">#FFF48FB1</color>           <!-- Soft pink toolbar -->
-    <color name="score_card_bg">#FFFCE4EC</color>        <!-- Very light pink -->
+    <color name="card_back">#FFBA68C8</color>           <!-- Lavender card back -->
+    <color name="card_matched">#FFF48FB1</color>        <!-- Pink for matched cards -->
+    <color name="tile_color">#FFF06292</color>           <!-- Rose pink tile -->
+    <color name="tile_empty">#00000000</color>           <!-- Transparent empty tile -->
+    <color name="splash_bg">#FFFFF0F5</color>            <!-- Blush splash background -->
+    <color name="game_hub_bg">#FFFFF0F5</color>          <!-- Blush game hub background -->
+    <color name="toolbar_bg">#FFF06292</color>           <!-- Rose pink toolbar -->
+    <color name="score_card_bg">#FFFFF0F5</color>        <!-- Soft blush score card -->
 </resources>

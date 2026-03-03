@@ -8,21 +8,23 @@
     android:gravity="center"
     android:background="@color/blush_background">
 
+    <!-- Screen title -->
     <TextView
         style="@style/AppTitleText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/choose_your_puzzle"
+        android:text="🎮 Choose Your Game"
         android:layout_marginBottom="32dp" />
 
+    <!-- Memory Match card -->
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardMemory"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        app:cardCornerRadius="20dp"
-        app:cardElevation="4dp"
-        app:cardBackgroundColor="@color/surface_white"
+        android:layout_marginBottom="20dp"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="6dp"
+        app:cardBackgroundColor="@color/soft_peach"
         android:clickable="true"
         android:focusable="true">
 
@@ -30,23 +32,24 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="24dp"
+            android:padding="28dp"
             android:gravity="center">
 
-            <ImageView
-                android:layout_width="64dp"
-                android:layout_height="64dp"
-                android:src="@drawable/card_back"
-                android:contentDescription="Memory Game" />
+            <!-- Game icon emoji as a large text -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🃏"
+                android:textSize="48sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/memory_match"
-                android:textSize="18sp"
+                android:textSize="20sp"
                 android:textStyle="bold"
                 android:textColor="@color/accent_purple"
-                android:layout_marginTop="8dp" />
+                android:layout_marginTop="10dp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -54,18 +57,19 @@
                 android:text="@string/find_matching_pairs"
                 android:textSize="14sp"
                 android:textColor="@color/pink_primary"
-                android:layout_marginTop="4dp" />
+                android:layout_marginTop="6dp" />
 
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 
+    <!-- Sliding Puzzle card -->
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardSliding"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="20dp"
-        app:cardElevation="4dp"
-        app:cardBackgroundColor="@color/surface_white"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="6dp"
+        app:cardBackgroundColor="@color/soft_lilac"
         android:clickable="true"
         android:focusable="true">
 
@@ -73,23 +77,24 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="24dp"
+            android:padding="28dp"
             android:gravity="center">
 
-            <ImageView
-                android:layout_width="64dp"
-                android:layout_height="64dp"
-                android:src="@drawable/card_front_2"
-                android:contentDescription="Sliding Puzzle" />
+            <!-- Game icon emoji as a large text -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🔢"
+                android:textSize="48sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/sliding_puzzle"
-                android:textSize="18sp"
+                android:textSize="20sp"
                 android:textStyle="bold"
                 android:textColor="@color/accent_purple"
-                android:layout_marginTop="8dp" />
+                android:layout_marginTop="10dp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -97,7 +102,7 @@
                 android:text="@string/slide_tiles_into_order"
                 android:textSize="14sp"
                 android:textColor="@color/pink_primary"
-                android:layout_marginTop="4dp" />
+                android:layout_marginTop="6dp" />
 
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
